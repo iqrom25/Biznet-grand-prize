@@ -1,0 +1,8 @@
+{
+  "name": "biznet-grand-prize",
+  "version": "1.0.0",
+  "description": "Halaman pribadi: aku menang Grand Prize Biznet",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

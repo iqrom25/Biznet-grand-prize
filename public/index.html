@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aku Menang Grand Prize!</title>
+<meta name="description" content="Cerita pribadi: aku menang Grand Prize Biznet.">
+<style>
+  :root { --bg:#0b1020; --fg:#f5f7ff; --muted:#aab3d1; --gold:#ffcc4d; --card:#151c33; }
+  * { box-sizing:border-box; margin:0; }
+  body { min-height:100vh; background:radial-gradient(circle at 50% 0%, #1d2a5c, var(--bg) 60%); color:var(--fg);
+         font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; display:flex; align-items:center; justify-content:center; padding:24px 16px; overflow-x:hidden; }
+  main { max-width:640px; text-align:center; }
+  .trophy { font-size:clamp(64px,18vw,120px); animation:bounce 2s ease-in-out infinite; }
+  @keyframes bounce { 50% { transform:translateY(-12px) rotate(-4deg); } }
+  .tag { display:inline-block; margin:16px 0 8px; padding:6px 14px; border-radius:999px; background:rgba(255,204,77,.15); color:var(--gold); font-weight:600; letter-spacing:.08em; text-transform:uppercase; font-size:13px; }
+  h1 { font-size:clamp(32px,8vw,56px); line-height:1.1; margin:8px 0 16px; }
+  h1 span { color:var(--gold); }
+  p { color:var(--muted); font-size:18px; line-height:1.6; }
+  .card { margin-top:28px; background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:20px; text-align:left; }
+  .card h2 { font-size:16px; color:var(--gold); margin-bottom:8px; }
+  footer { margin-top:28px; font-size:13px; color:var(--muted); }
+  .confetti { position:fixed; top:-10px; width:8px; height:14px; opacity:.9; animation:fall linear forwards; pointer-events:none; }
+  @keyframes fall { to { transform:translateY(110vh) rotate(720deg); } }
+  @media (prefers-reduced-motion: reduce) { .trophy, .confetti { animation:none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="trophy" aria-hidden="true">🏆</div>
+  <div class="tag">Grand Prize Winner</div>
+  <h1>Aku menang <span>Grand Prize Biznet!</span></h1>
+  <p>Masih nggak nyangka — akhirnya rezeki datang juga. Terima kasih untuk semua yang sudah mendukung dan mendoakan. 🙏</p>
+  <section class="card">
+    <h2>Ceritanya</h2>
+    <p>Tulis cerita kamu di sini: kapan ikut, hadiahnya apa, dan gimana rasanya waktu diumumkan sebagai pemenang.</p>
+  </section>
+  <footer>Halaman pribadi · di-deploy di NEO App</footer>
+</main>
+<script>
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const colors = ["#ffcc4d", "#4dd0ff", "#ff6b9a", "#7cff9b"];
+    for (let i = 0; i < 80; i++) {
+      const c = document.createElement("div");
+      c.className = "confetti";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.background = colors[i % colors.length];
+      c.style.animationDuration = 3 + Math.random() * 4 + "s";
+      c.style.animationDelay = Math.random() * 2 + "s";
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 9000);
+    }
+  }
+</script>
+</body>
+</html>
