@@ -8,7 +8,7 @@ npm start   # http://localhost:8080
 ```
 
 ## Deploy ke NEO App (Biznet Gio)
-Aplikasi Node.js tanpa dependency. Server membaca port dari env `PORT` (default 8080), health check di `/health`.
+Aplikasi Node.js tanpa dependency. `index.html` ada di root repo, jadi bisa di-deploy sebagai **Static site** (publish directory: root, tanpa build command) atau sebagai **Web service** Node.js. Server membaca port dari env `PORT` (default 8080), health check di `/health`.
 
 **Lewat Git:** di dashboard NEO App buat app baru → hubungkan repo ini → runtime Node.js, start command `npm start`.
 
