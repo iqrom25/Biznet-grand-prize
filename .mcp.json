@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "neo-app": {
+      "command": "npx",
+      "args": ["-y", "@biznetgio/neo-app@latest", "mcp"],
+      "env": { "NEO_APP_URL": "https://portal.app.neoapp.id" }
+    }
+  }
+}

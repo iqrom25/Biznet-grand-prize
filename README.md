@@ -12,8 +12,14 @@ Aplikasi Node.js tanpa dependency. Server membaca port dari env `PORT` (default 
 
 **Lewat Git:** di dashboard NEO App buat app baru → hubungkan repo ini → runtime Node.js, start command `npm start`.
 
-**Lewat MCP (chat-to-deploy):** ambil URL server MCP + token dari dashboard NEO App, lalu:
+**Lewat MCP (chat-to-deploy):** repo ini sudah berisi `.mcp.json` (server `neo-app`). Login sekali di terminal (token disimpan di `~/.config/neo-app`, tidak di repo):
 ```bash
-claude mcp add --transport http neo-app <URL_MCP_DARI_DASHBOARD> --header "Authorization: Bearer <TOKEN>"
+npx -y @biznetgio/neo-app@latest login
 ```
-Setelah itu minta Claude: "deploy repo ini ke NEO App".
+Buka Claude Code di folder ini, lalu minta: "deploy repo ini ke NEO App".
+
+**Lewat CLI langsung:**
+```bash
+npx -y @biznetgio/neo-app@latest project create biznet-grand-prize
+npx -y @biznetgio/neo-app@latest deploy . --type web --port 8080
+```
